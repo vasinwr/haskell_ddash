@@ -1,0 +1,19 @@
+1. How did you approach solving this problem?
+  > I see this problem as a graph problem where we would perform Breadth First Search starting from the "starting" 
+    word until we reach the "target" word. 
+    Graph node in this case is a word in the dictionary and its neighbouring nodes are all valid words that it can 
+    be transformed to.
+    I have optimised the performance by 1. reducing the BFS search space by performing BFS from both the "starting" 
+                                           and "target" word (node).
+                                        2. creating a map from the dictionary to improve the performance of looking
+                                           up all the neighouring nodes of a word(node). Explanation of the map 
+                                           implementation is in the Ddash.hs file written as comments.  
+
+2. How did you check that your solution is correct?
+  > I have develop this probram with Test Driven Developement. Each functions that I have written are tested 
+    with the tests in Tests.hs file. 
+
+3. Specify any assumptions that you have made? 
+  > 1. Input for the dictionary is a list of words ie [String]
+    2. Dictionary can be fitted into memory (given in problem description)
+    3. Map built from the dictionary can be fitted into memory

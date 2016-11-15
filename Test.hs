@@ -1,6 +1,7 @@
 import IC.TestSuite hiding (Id)
 import qualified IC.TestSuite as TS
 import qualified Data.Map as Map
+import qualified Data.Set as Set
 import Ddash
 
 getAllKeysTests = [("hello") ==> ["_ello","h_llo","he_lo","hel_o","hell_"],
@@ -33,7 +34,8 @@ rmDupTests = [
               (["1","1","1"]) ==> ["1"],
               (["1","2","3"]) ==> ["1","2","3"],
               (["1","2","3","2","3"]) ==> ["1","2","3"],
-              ([]) ==> []
+              ([]) ==> [],
+              (["1","2","2","1"]) ==> (Set.toList . Set.fromList) ["2","1"]
               ]
 
 shortestPathOpTests = [("hit","cog",["hit","dot","dog","cog","hot","log"]) ==> 4,

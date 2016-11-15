@@ -84,4 +84,4 @@ expandOne froms dict visited
 -- O(nlogn) runtime
 rmDup :: Ord a => [a] -> [a]
 rmDup s
-  = Set.toList (Set.fromList s)
+  = (Set.toList.Set.fromList) s
